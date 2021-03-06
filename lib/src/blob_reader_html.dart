@@ -1,4 +1,4 @@
-import "dart:html";
+import "package:universal_html/html.dart";
 import "dart:async";
 import "dart:typed_data";
 

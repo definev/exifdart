@@ -1,5 +1,5 @@
 import "dart:async";
-import "dart:io";
+import "package:universal_io/io.dart";
 import "package:exifdart/exifdart_io.dart";
 
 const Map<int, String> orienationNames = {
