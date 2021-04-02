@@ -1,3 +1,3 @@
 abstract class LogMessageSink {
-  void log(Object message, [List<Object> additional]);
+  void log(Object message, [List<Object>? additional]);
 }

@@ -6,7 +6,7 @@ import "abstract_reader.dart";
 import "exif_extractor.dart";
 
 /// Reads the EXIF info from a DOM `Blob` object including a `File` object.
-Future<Map<String, dynamic>> readExifFromBlob(Blob blob,
+Future<Map<String, dynamic>?> readExifFromBlob(Blob blob,
     {bool printDebugInfo = false}) {
   return readExif(new BlobReader(blob));
 }

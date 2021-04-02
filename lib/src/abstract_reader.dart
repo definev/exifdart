@@ -4,7 +4,7 @@ import "dart:typed_data";
 /// An interface to randomly read a blob.
 abstract class AbstractBlobReader {
   /// Returns the size of the blob.
-  FutureOr<int> get byteLength;
+  FutureOr<int>? get byteLength;
 
   /// Returns the bytes as `ByteData` in the given section.
   /// The [start] is inclusive, the [end] is exclusive.

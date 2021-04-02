@@ -8,35 +8,35 @@ class CacheView {
   bool contains(int absPosition) =>
       bytes != null &&
       start <= absPosition &&
-      absPosition - start < bytes.lengthInBytes;
+      absPosition - start < bytes!.lengthInBytes;
 
   bool containsRange(int absStart, int absEnd) =>
       bytes != null &&
       start <= absStart &&
-      absEnd <= start + bytes.lengthInBytes;
+      absEnd <= start + bytes!.lengthInBytes;
 
-  int getUint8(int offset) => bytes.getUint8(offset - start);
+  int getUint8(int offset) => bytes!.getUint8(offset - start);
   int getUint16(int offset, Endian endianness) =>
-      bytes.getUint16(offset - start, endianness);
+      bytes!.getUint16(offset - start, endianness);
   int getUint32(int offset, Endian endianness) =>
-      bytes.getUint32(offset - start, endianness);
+      bytes!.getUint32(offset - start, endianness);
   int getInt32(int offset, Endian endianness) =>
-      bytes.getInt32(offset - start, endianness);
+      bytes!.getInt32(offset - start, endianness);
   double getFloat32(int offset, Endian endianness) =>
-      bytes.getFloat32(offset - start, endianness);
+      bytes!.getFloat32(offset - start, endianness);
   double getFloat64(int offset, Endian endianness) =>
-      bytes.getFloat64(offset - start, endianness);
+      bytes!.getFloat64(offset - start, endianness);
 
-  ByteData getBytes(int absStart, int absEnd) => bytes.buffer
-      .asByteData(bytes.offsetInBytes + absStart - start, absEnd - absStart);
+  ByteData getBytes(int absStart, int absEnd) => bytes!.buffer
+      .asByteData(bytes!.offsetInBytes + absStart - start, absEnd - absStart);
 
   final int start;
-  final ByteData bytes;
+  final ByteData? bytes;
 }
 
 class BlobView {
   static FutureOr<BlobView> create(AbstractBlobReader blob) {
-    FutureOr<int> length = blob.byteLength;
+    FutureOr<int>? length = blob.byteLength;
     if (length is Future)
       return (length as Future)
           .then((actualLength) => new BlobView._(blob, actualLength));
@@ -45,7 +45,7 @@ class BlobView {
 
   BlobView._(this.blob, this.byteLength);
 
-  final int byteLength;
+  final int? byteLength;
 
   Future<ByteData> getBytes(int start, int end) async {
     if (_lastCacheView.containsRange(start, end))
@@ -103,7 +103,7 @@ class BlobView {
   FutureOr<CacheView> _retrieve(int start, int end) {
     FutureOr<ByteData> bytes = blob.readSlice(start, end);
     if (bytes is Future) {
-      Future<ByteData> bytesFuture = bytes;
+      Future<ByteData> bytesFuture = bytes as Future<ByteData>;
       return bytesFuture
           .then((actualBytes) => new CacheView(start, actualBytes));
     }

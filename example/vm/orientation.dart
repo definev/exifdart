@@ -26,8 +26,8 @@ Future main(List<String> args) async {
     stderr.writeln("Usage:");
     stderr.writeln("  orientation.dart <filename.jpg>");
   }
-  Map<String, dynamic> result = await readExifFromFile(File(args[0]));
-  int orientation = result == null ? null : result["Orientation"];
+  Map<String, dynamic>? result = await readExifFromFile(File(args[0]));
+  int? orientation = result == null ? null : result["Orientation"];
   if (orientation == null) {
     print("Orientation is missing");
   } else {

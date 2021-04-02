@@ -21,21 +21,21 @@
     },
     {
       "name": "crypto",
-      "rootUri": "file:///C:/Users/bigpl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/crypto-3.0.0",
+      "rootUri": "file:///C:/Users/bigpl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/crypto-3.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "csslib",
-      "rootUri": "file:///C:/Users/bigpl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/csslib-0.16.2",
+      "rootUri": "file:///C:/Users/bigpl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/csslib-0.17.0",
       "packageUri": "lib/",
-      "languageVersion": "2.2"
+      "languageVersion": "2.12"
     },
     {
       "name": "html",
-      "rootUri": "file:///C:/Users/bigpl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/html-0.14.0+4",
+      "rootUri": "file:///C:/Users/bigpl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/html-0.15.0",
       "packageUri": "lib/",
-      "languageVersion": "2.3"
+      "languageVersion": "2.12"
     },
     {
       "name": "meta",
@@ -69,30 +69,24 @@
     },
     {
       "name": "universal_html",
-      "rootUri": "file:///C:/Users/bigpl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/universal_html-1.2.4",
-      "packageUri": "lib/",
-      "languageVersion": "2.8"
-    },
-    {
-      "name": "universal_io",
-      "rootUri": "file:///C:/Users/bigpl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/universal_io-2.0.0",
+      "rootUri": "file:///C:/Users/bigpl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/universal_html-2.0.7",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
-      "name": "zone_local",
-      "rootUri": "file:///C:/Users/bigpl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/zone_local-0.1.2",
+      "name": "universal_io",
+      "rootUri": "file:///C:/Users/bigpl/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/universal_io-2.0.3",
       "packageUri": "lib/",
-      "languageVersion": "2.6"
+      "languageVersion": "2.12"
     },
     {
       "name": "exifdart",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-03-06T19:16:34.876115Z",
+  "generated": "2021-04-02T15:24:53.386918Z",
   "generator": "pub",
-  "generatorVersion": "2.12.0"
+  "generatorVersion": "2.13.0-116.0.dev"
 }

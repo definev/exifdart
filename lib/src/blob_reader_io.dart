@@ -6,7 +6,7 @@ import "abstract_reader.dart";
 import "exif_extractor.dart";
 
 /// Reads the EXIF info from a `dart:io` `File` object.
-Future<Map<String, dynamic>> readExifFromFile(File file,
+Future<Map<String, dynamic>?> readExifFromFile(File file,
     {bool printDebugInfo = false}) {
   return readExif(new FileReader(file));
 }
@@ -17,14 +17,14 @@ class FileReader extends AbstractBlobReader {
   FileReader(this.file);
 
   @override
-  FutureOr<int> get byteLength {
+  FutureOr<int>? get byteLength {
     if (_length != null) return _length;
     return file.length().then((len) => _length = len);
   }
 
   @override
   Future<ByteData> readSlice(int start, int end) async {
-    int size = await byteLength;
+    int size = await byteLength!;
     if (start >= size) return new ByteData(0);
     if (end > size) end = size;
     List<List<int>> blocks = await file.openRead(start, end).toList();
@@ -47,5 +47,5 @@ class FileReader extends AbstractBlobReader {
   }
 
   final File file;
-  int _length;
+  int? _length;
 }
